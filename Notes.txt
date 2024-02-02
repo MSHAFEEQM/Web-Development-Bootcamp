@@ -1,0 +1,43 @@
+CSS Selectors
+
+	element Selectors
+	class Selectors
+	attribute Selectors
+	universal Selectors
+	id Selectors
+	
+
+www.colorhunt.com
+
+font measures : px, pt, em, rem
+
+em vs rem
+
+css inspection : chrome developer tool
+
+CSS box model
+	
+	margin
+	padding
+	border
+	width
+	height
+	
+
+CSS advanced
+	 
+	Position  : consider last one
+	specifity :  id > attribute > class > element
+	Type : inline > internal > external
+	importance : !important keyword
+	
+Combination of CSS Selectors
+
+	
+	http://lascarid.es/fussyflags/
+	
+	https://sellfy.com/
+	
+	
+
+

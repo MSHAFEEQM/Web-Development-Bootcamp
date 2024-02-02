@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burger Shop</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+  
+  header {
+    background-color: #6c3483;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .hero {
+    background-color: #8bc34a;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3em;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+  }
+  
+  .menu-item {
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .menu-item img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .menu-item-content {
+    padding: 20px;
+  }
+  
+  .menu-item h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #6c3483;
+  }
+  
+  .menu-item p {
+    color: #555;
+  }
+  
+  footer {
+    background-color: #6c3483;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Burger Shop</h1>
+    <h2>Delicious Burgers Made Fresh!</h2>
+  </header>
+  
+  <div class="container">
+    <div class="hero">
+      <h1>Welcome to Burger Shop</h1>
+      <p>We serve the tastiest burgers in town!</p>
+    </div>
+    
+    <div class="menu">
+      <div class="menu-item">
+        <img src="burger1.jpg" alt="Burger 1">
+        <div class="menu-item-content">
+          <h2>Classic Burger</h2>
+          <p>Our classic burger with fresh lettuce, tomato, and special sauce.</p>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <img src="burger2.jpg" alt="Burger 2">
+        <div class="menu-item-content">
+          <h2>Cheeseburger</h2>
+          <p>Delicious cheeseburger with melted cheddar and crispy bacon.</p>
+        </div>
+      </div>
+      
+      <div class="menu-item">
+        <img src="burger3.jpg" alt="Burger 3">
+        <div class="menu-item-content">
+          <h2>Veggie Burger</h2>
+          <p>Healthy veggie burger made with fresh vegetables and homemade sauce.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <p>&copy; 2024 Burger Shop. All rights reserved.</p>
+  </footer>
+</body>
+</html>

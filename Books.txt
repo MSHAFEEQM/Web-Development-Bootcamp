@@ -1,0 +1,10 @@
+Thinking in Systems: A Primer - Donella H. Meadows
+Algorithms to Live By: The Computer Science of Human Decisions - Brian Christian
+Code: The Hidden Language of Computer Hardware and Software - Petzold Charles
+Think Like a Programmer: An Introduction to Creative Problem Solving - V. Anton Spraul
+The Pragmatic Programmer: your journey to mastery, 20th Anniversary Edition -Thomas David
+Clean Code: A Handbook of Agile Software Craftsmanship - Martin Robert C.
+Grokking Algorithms: An illustrated guide for programmers and other curious people - Aditya Bhargava
+A Common-Sense Guide to Data Structures and Algorithms, Second Edition- Jay Wengrow
+Web Scalability for Startup Engineers - Artur Ejsmont
+Cybersecurity For Dummies - Joseph Steinberg 
