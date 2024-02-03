@@ -1,7 +1,12 @@
 <%- include("partials/header.ejs") %>
 
+
+
+
   <% if(locals.adjName){ %>
-    <h1>
+    <div class="image">
+      <img src="https://picsum.photos/200" alt="Random Image">
+    </div><h1>
       <%= adjName %>
         <%= nounName %>
     </h1>
@@ -10,7 +15,7 @@
       <%}%>
 
         <form action="/submit" method="POST">
-          <input type="submit" value="Generate Name">
+          <input type="submit" value="Generate Name">    
         </form>
         <form action="/" method="POST">
           <input class="home" type="submit" value="Home">
