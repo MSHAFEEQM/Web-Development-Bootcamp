@@ -54,8 +54,20 @@ a{
 .image{
   width: 200px;
   height: 200px;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid hotpink;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 img{
   border-radius: 10px;
-  border: 2px solid hotpink;
+}
+
+.main-img{
+  position: absolute;
+  top: 0;
+  left: 0;
 }
