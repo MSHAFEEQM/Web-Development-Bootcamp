@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Taco Recipes</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <h1>Taco Town <img width="66" height="66" src="https://img.icons8.com/external-smashingstocks-outline-color-smashing-stocks/66/external-Taco-food-and-drinks-smashingstocks-outline-color-smashing-stocks.png" alt="external-Taco-food-and-drinks-smashingstocks-outline-color-smashing-stocks"/></h1>
+
+  <form action="/recipe" method="POST" class="buttons">
+    <button type="submit" value="chicken" name="choice"><img width="24" height="24" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-chicken-foodies-flaticons-lineal-color-flat-icons.png" alt="external-chicken-foodies-flaticons-lineal-color-flat-icons"/></button>
+    <button type="submit" value="beef" name="choice"><img width="91" height="91" src="https://img.icons8.com/external-colours-bomsymbols-/91/external-beef-food-set-2-colours-bomsymbols-.png" alt="external-beef-food-set-2-colours-bomsymbols-"/></button>
+    <button type="submit" value="fish" name="choice"><img width="64" height="64" src="https://img.icons8.com/cotton/64/dressed-fish.png" alt="dressed-fish"/></button>
+  </form>
+  <div id="recipeContainer" class="hidden">
+
+    <%if (locals.recipe) {%>
+
+      <h2 id="recipeTitle">
+        <%= recipe.name %>
+      </h2>
+
+      <h3>Ingredients:</h3>
+
+      <ul id="ingredientsList">
+        <li> <%= recipe.ingredients.protein.name %>, <%= recipe.ingredients.protein.preparation %> </li>
+        <li> <%= recipe.ingredients.salsa.name %> </li>
+        <% recipe.ingredients.toppings.forEach(element => { %>
+          <li><%= element.quantity %> of <%= element.name %></li>
+       <% }); %>
+        
+      </ul>
+      <% }else{ %>
+    <h2>Pick your favourite taco ingredient 👆</h2>
+    <% } %>
+    <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
+
+    
+
+
+
+  </div>
+</body>
+
+</html>
