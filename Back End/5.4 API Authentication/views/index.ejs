@@ -22,6 +22,8 @@
       border-radius: 5px;
       color: white;
       cursor: pointer;
+      width: 250px;
+      font-weight: 800;
     }
 
     #noAuth {
@@ -42,9 +44,18 @@
 
     .response-area {
       margin-top: 20px;
-      background-color: white;
+      background-color: #424242;
+      color: #eee;
+      font-family: monospace;
       padding: 20px;
+      line-height: 30px;
+      font-size: 1rem;
+      font-weight: 700;
     }
+
+    ul {
+      list-style-image: url('/green-dot.png');
+    } 
   </style>
 </head>
 
@@ -56,7 +67,11 @@
 
   <div class="response-area">
     <p>
-      <%=content%>
+      <ul>
+      <% content.forEach(element =>{ %>
+        <li><%= element.secret %></li>
+        <% }) %>
+      </ul>
     </p>
   </div>
 </body>

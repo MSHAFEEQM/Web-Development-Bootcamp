@@ -2,12 +2,12 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
+const port = 4000;
 const API_URL = "https://secrets-api.appbrewery.com";
 
 // TODO: Replace the values below with your own before running this file.
-const yourUsername = "";
-const yourPassword = "";
+const yourUsername = "MShafeeqM";
+const yourPassword = "123456";
 const yourAPIKey = "";
 const yourBearerToken = "";
 
