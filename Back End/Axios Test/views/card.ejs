@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f7;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #6a3093, #a044ff, #6a3093);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background: linear-gradient(to right, #2d3436, #7f8c8d);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #1abc9c;
+        }
+        .main-content {
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .content-box {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            max-width: calc(100% - 40px);
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .content-box h2 {
+            margin-top: 0;
+            color: #6a3093;
+        }
+        .content-box p {
+            color: #333;
+            font-size: 1.1rem;
+        }
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 3px solid #6a3093;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6a3093;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Your Home Page</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+</nav>
+
+<div class="main-content">
+    <div class="content-box">
+        <img class="profile-img" src="https://via.placeholder.com/100" alt="Profile Picture">
+        <h2>Latest Updates</h2>
+        <p>Welcome to your home page. Here you can find the latest updates and notifications.</p>
+        <a href="#" class="btn">View Updates</a>
+    </div>
+    <div class="content-box">
+        <img class="profile-img" src="https://via.placeholder.com/100" alt="Profile Picture">
+        <h2>Notifications</h2>
+        <p>You have 3 new messages and 1 friend request.</p>
+        <a href="#" class="btn">View Notifications</a>
+    </div>
+</div>
+
+</body>
+</html>

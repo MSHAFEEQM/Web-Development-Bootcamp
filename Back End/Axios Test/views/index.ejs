@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.name.title%> <%= user.name.first%> <%=user.name.last %></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .profile-card {
+            background-color: #e8e4f7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px;
+            max-width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .profile-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .profile-card h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .profile-card p {
+            color: #777;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+    <img src="<%= user.picture.medium %>" alt="Profile Picture">
+    <h2><%= user.name.title%> <%= user.name.first%> <%=user.name.last %></h2>
+    <p><%= user.email %></p>
+    <p><%= user.phone %></p>
+    <p><%= user.gender %> <%= user.dob.age %> year old</p>
+    <address>
+        <%= user.location.street.name %>,
+        <%= user.location.city %>,
+        <%= user.location.state %>,
+        <%= user.location.country %>,
+        <%= user.location.postcode %>
+    </address>
+</div>
+
+</body>
+</html>

@@ -35,18 +35,20 @@
     </form>
     <section id="cards" class="cards">
       <article class="card-item">
+       <% if(locals.data){ %>
         <h2 class="card-activity">
-          <!-- Show Activity -->
+          <%= data.activity %>
         </h2>
         <div class="card-info">
           <span class="card-type">
-            <!-- Show Activity type -->
+            <%= data.type %>
           </span>
           <span class="card-participants">
-            <!-- participants: Show participant number -->
+            <%= data.participants %>
             <span class="card-number"></span>
           </span>
         </div>
+        <% } %>
       </article>
 
 
