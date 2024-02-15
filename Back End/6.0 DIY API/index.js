@@ -1,31 +1,100 @@
-import express from "express";
+import express, { application } from "express";
 import bodyParser from "body-parser";
 
 const app = express();
-const port = 3000;
+const port = 4000;
 const masterKey = "4VGP2DN-6EWM4SJ-N6FGRHV-Z3PR3TT";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//1. GET a random joke
+app.get("/random",(req,res)=>{
+  const randomIndex = Math.floor(Math.random()*jokes.length);
+  res.json(jokes[randomIndex]);
+})
 
-//2. GET a specific joke
+app.get("/jokes/:id",(req,res)=>{
 
-//3. GET a jokes by filtering on the joke type
+  const serchId = parseInt(req.params.id);
+  const joke = jokes.find(joke => joke.id === serchId)
+  if (joke == null)
+    res.send(`Joke with ID : ${serchId} Not Found`)
+  else
+    res.json(joke);
+})
+
+app.get("/filter",(req,res)=>{
+
+  const searchType = capitalize(req.query.type);
+  const filteredJokes = jokes.filter(joke => joke.jokeType === searchType)
+  if (filteredJokes.length == 0)
+    res.send(`Jokes with type : ${searchType} Not Found`)
+  else
+    res.json(filteredJokes);
+})
 
 //4. POST a new joke
-
+app.post("/jokes",(req,res)=>{
+  const newJoke = {
+    id: jokes.length+1,
+    jokeText: req.body.text,
+    jokeType: req.body.type
+  }
+  jokes.push(newJoke)
+  console.log(jokes.slice(-1));
+  res.json(newJoke);
+})
 //5. PUT a joke
-
+app.put("/jokes/:id",(req,res)=>{
+  const searchID = parseInt(req.params.id)
+  const putIndex = jokes.findIndex(joke=>joke.id === searchID);
+  jokes[putIndex].jokeText = req.body.text;
+  jokes[putIndex].jokeType = req.body.type; 
+  res.json(jokes[putIndex]);
+})
 //6. PATCH a joke
-
+app.patch("/jokes/:id",(req,res)=>{
+  const searchID = parseInt(req.params.id)
+  const patchIndex = jokes.findIndex(joke=>joke.id === searchID);
+  jokes[patchIndex].jokeText = req.body.text || jokes[patchIndex].jokeText;
+  jokes[patchIndex].jokeType = req.body.type || jokes[patchIndex].jokeType; 
+  res.json(jokes[patchIndex]);
+})
 //7. DELETE Specific joke
+app.delete("/jokes/:id",(req,res)=>{
 
+  const searchId = parseInt(req.params.id)
+  const findIndex = jokes.findIndex(joke=> joke.id === searchId)
+  if (findIndex > -1) {
+    jokes.splice(findIndex, 1);
+    res.status(200).json(`Joke with ID : ${searchId} was deleted` );
+  } else {
+    res
+      .status(404)
+      .json({ error: `Joke with id: ${searchId} not found. No jokes were deleted.` });
+  }
+})
 //8. DELETE All jokes
+app.delete("/joke/all",(req,res)=>{
+
+  const userKey = req.query.key;
+  if (userKey === masterKey) {
+    jokes = [];
+    res.status(200).json("Damn..! all Jokes are deleted");
+  } else { 
+    res
+      .status(404)
+      .json({ error: `You are not authorised to perform this action.` });
+  } 
+})
+
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
 });
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1); 
+}
 
 var jokes = [
   {
