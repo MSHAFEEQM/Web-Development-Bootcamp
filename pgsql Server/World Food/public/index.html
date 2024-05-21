@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    form {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<form id="dynamicForm" method="post" action="/upload">
+    <label for="country">Country:</label>
+    <input type="text" id="country" name="country">
+    <label for="rice">Rice Quantity (kg):</label>
+    <input type="text" id="rice" name="rice">
+    <label for="wheat">Wheat Quantity (kg):</label>
+    <input type="text" id="wheat" name="wheat">
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
