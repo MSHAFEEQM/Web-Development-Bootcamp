@@ -24,7 +24,7 @@
       <%=question.country %>
     </h1>
     <div class="answer-container">
-      <input type="text" name="answer" id="userInput" placeholder="Enter the capital" autofocus autocomplete="off">
+      <input type="text" name="answer" id="userInput" value="<%=question.capital %>" autofocus autocomplete="off">
 
     </div>
     <button type="submit">SUBMIT<% if(locals.wasCorrect){ %>

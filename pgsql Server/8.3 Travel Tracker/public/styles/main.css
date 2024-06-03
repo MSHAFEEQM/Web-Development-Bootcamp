@@ -102,3 +102,62 @@ button {
   left: 0;
   bottom: 0;
 }
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* button {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+} */
+
+.overlay {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+  z-index: 1; /* Sit on top */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+.overlay-content {
+  position: relative;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 30%; /* Could be more or less, depending on screen size */
+  height: 60%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  background-color: teal;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.overlay-content::-webkit-scrollbar {
+  display: none;
+}
+li{
+  padding: 5px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#openOverlayBtn{
+  margin-left: 1rem;
+  border-radius: 12px;
+  height: 60%;
+  padding: 10px;
+  font-weight: bold;
+}

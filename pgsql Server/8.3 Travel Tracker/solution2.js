@@ -9,7 +9,7 @@ const db = new pg.Client({
   user: "postgres",
   host: "localhost",
   database: "world",
-  password: "123456",
+  password: "101010",
   port: 5432,
 });
 db.connect();
@@ -29,7 +29,7 @@ async function checkVisisted() {
 
 // GET home page
 app.get("/", async (req, res) => {
-  const countries = await checkVisisted();
+  const countries = await checkVisisted();  
   res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
@@ -54,5 +54,5 @@ app.post("/add", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}`);  
 });

@@ -9,16 +9,30 @@
 </head>
 
 <body>
-  <form action="/add" method="post">
-    <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
-    <button type="submit">Add</button>
+  <form class="tab-view tab-view-height-auto" action="/user" method="post">
+    <% users.forEach(function(user) { %>
+      <input type="submit" name="user" value="<%= user.id %>" id="<%= user.id %>">
+      <label for="<%= user.id %>" style="background-color: <%= user.color %>;">
+        <%= user.name %>
+      </label>
+      <% }); %>
+
+        <input type="submit" name="add" value="new" id="tab">
+        <label for="tab">Add Family Member</label>
+
   </form>
 
-  <section class="ag-canvas"> 
+  <form action="/add" method="post">
+    <input type="text" name="country" autofocus placeholder="<%= locals.error ? error :  'Enter country name'%>">
+    <button type="submit" style="background-color: <%= color %>;">Add</button>
+  </form>
+
+  <section class="ag-canvas">
     <svg class="ag-canvas_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
       version="1.1" viewBox="0 0 1008 651">
       <path id="AE" title="United Arab Emirates"
         d="M619.874,393.722L620.373,393.573L620.477,394.411L622.671,393.93L624.99,394.009L626.684,394.1L628.604,392.028L630.695,390.054L632.467,388.146L633.001,389.202L633.382,391.639L631.949,391.651L631.72,393.648L632.216,394.073L630.947,394.674L630.939,395.919L630.122,397.175L630.049,398.394L629.484,399.032L621.056,397.508L619.981,394.428z" />
+
       <path id="AF" title="Afghanistan"
         d="M646.879,356.901L649.738,358.201L651.853,357.745L652.438,356.188L654.651,355.669L656.231,354.617L656.791,351.832L659.154,351.154L659.594,349.902L660.917,350.843L661.762,350.952L663.323,350.975L665.438,351.716L666.295,352.143L668.324,351.017L669.27,351.694L670.174,350.085L671.85,350.159L672.281,349.641L672.578,348.213L673.785,346.975L675.303,347.785L674.998,348.869L675.846,349.038L675.585,351.994L676.694,353.137L677.672,352.404L678.916,352.057L680.663,350.486L682.594,350.745L685.486,350.751L685.985,351.758L684.353,352.15L682.928,352.795L679.71,353.2L676.699,353.931L675.063,355.439L675.725,356.899L676.046,358.603L674.649,360.033L674.766,361.335L673.995,362.549L671.328,362.444L672.43,364.663L670.646,365.507L669.455,367.511L669.609,369.491L668.514,370.415L667.477,370.109L665.334,370.537L665.027,371.451L662.939,371.446L661.377,373.289L661.278,376.039L657.635,377.374L655.682,377.092L655.114,377.794L653.438,377.386L650.634,377.865L645.936,376.228L648.479,373.298L648.249,371.202L646.125,370.65L645.905,368.565L644.987,365.921L646.187,364.094L644.966,363.599L645.736,361.148z" />
       <path id="AL" title="Albania"
@@ -183,7 +197,7 @@
         d="M852.76,362.009l0.358,1.154l-1.579,2.025l-1.15,-1.072l-1.438,0.777l-0.744,1.946l-1.827,-0.946l0.022,-1.583l1.551,-2.003l1.595,0.39l1.152,-1.417L852.76,362.009zM870.53,351.726l-1.057,2.781l0.489,1.731l-1.461,2.416l-3.582,1.602l-4.929,0.208l-3.995,3.844l-1.884,-1.288l-0.116,-2.523l-4.877,0.747l-3.318,1.588l-3.282,0.064l2.843,2.463l-1.871,5.611l-1.813,1.373l-1.356,-1.268l0.688,-2.961l-1.774,-0.962l-1.139,-2.281l2.65,-1.03l1.471,-2.114l2.82,-1.75l2.057,-2.333l5.581,-1.023l2.998,0.702l2.934,-6.168l1.869,1.671l4.113,-3.512l1.595,-1.377l1.763,-4.383l-0.481,-4.1l1.185,-2.333l2.981,-0.682l1.528,5.108l-0.083,2.938l-2.594,3.602L870.53,351.726zM878.756,325.795l1.972,0.829l1.983,-1.651l0.623,4.348l-4.159,1.048l-2.455,3.763l-4.409,-2.583l-1.525,4.122l-3.119,0.056l-0.386,-3.741l1.387,-2.937l2.996,-0.213l0.817,-5.381l0.829,-3.089l3.295,4.117L878.756,325.795z" />
       <path id="KE" title="Kenya"
         d="M590.191,465.775L591.852,468.074L589.888,469.187L589.195,470.35L588.145,470.554L587.747,472.519L586.847,473.645L586.299,475.502L585.17,476.425L581.146,473.633L580.955,472.015L570.788,466.337L570.314,466.031L570.286,463.079L571.089,461.951L572.468,460.107L573.489,458.076L572.255,454.876L571.927,453.476L570.598,451.538L572.323,449.869L574.224,448.026L575.68,448.496L575.68,450.065L576.638,450.985L578.589,450.985L582.138,453.356L583.024,453.384L583.681,453.307L584.302,453.629L586.172,453.849L587,452.686L589.562,451.518L590.692,452.461L592.608,452.462L590.158,455.627z" />
-      <path id="KY" title="Kyrgyzstan"
+      <path id="KG" title="Kyrgyzstan"
         d="M674.221,333.111L674.849,331.451L676.694,330.914L681.308,332.223L681.743,329.976L683.335,329.182L687.328,330.791L688.347,330.37L692.996,330.475L697.156,330.874L698.563,332.239L700.29,332.794L699.896,333.647L695.478,335.679L694.479,337.157L690.882,337.597L689.821,339.951L686.854,339.459L684.916,340.177L682.239,341.903L682.626,342.753L681.828,343.582L676.526,344.129L673.063,342.955L670.022,343.236L670.288,341.14L673.34,341.75L674.366,340.624L676.499,340.984L680.09,338.339L676.767,336.385L674.77,337.312L672.7,335.911L675.054,333.482z" />
       <path id="KH" title="Cambodia"
         d="M765.444,433.599L764.304,432.121L762.886,429.182L762.222,425.732L764.018,423.347L767.643,422.797L770.271,423.21L772.585,424.336L773.854,422.354L776.338,423.413L776.988,425.327L776.643,428.753L771.93,430.944L773.161,432.665L770.218,432.871L767.791,434.013z" />
@@ -370,55 +384,17 @@
       <path id="ZW" title="Zimbabwe"
         d="M562.709,526.998L561.219,526.697L560.274,527.059L558.917,526.548L557.776,526.516L555.989,525.158L553.821,524.698L552.996,522.803L552.989,521.752L551.788,521.432L548.615,518.177L547.733,516.471L547.169,515.946L546.09,513.602L549.224,513.922L550.135,514.26L551.082,514.192L552.634,512.299L555.073,509.904L556.076,509.676L556.417,508.67L558.014,507.516L560.138,507.12L560.319,508.2L562.658,508.142L563.957,508.754L564.562,509.472L565.896,509.683L567.353,510.617L567.359,514.312L566.813,516.347L566.692,518.55L567.143,519.426L566.826,521.172L566.402,521.443L565.663,523.593z" />
     </svg>
-  
   </section>
-  
-  <h2 class="total-count">Total Countries: <%=locals.total%> 
-    <button id="openOverlayBtn">View Countries</button>
-    <div id="overlay" class="overlay">
-        <div class="overlay-content">
-            <span id="closeOverlayBtn" class="close-btn">&times;</span>
-            <% if(locals.countryNames){ %>
-            <ol>
-            <% locals.countryNames.forEach(name =>{ %>
-                              
-              <li> <%= name %>  </li>
-              
-          <%  }) }%>
-        </ol>
-        </div>
-    </div>
+  <h2 class="total-count">Total Countries: <%=total%>
   </h2>
   <script>
-    const country_codes = "<%= locals.countries %>".split(",") 
-    console.log(typeof ("<%= locals.countries %>"))
+    const country_codes = "<%= countries %>".split(",")
+    console.log(typeof ("<%= countries %>"))
     country_codes.forEach(code => {
       console.log(code)
-      document.getElementById(code).style.fill = 'teal' 
+      if(document.getElementById(code) != null){
+      document.getElementById(code).style.fill = "<%= color %>"}
     });
-
-    document.addEventListener('DOMContentLoaded', () => {
-    const openOverlayBtn = document.getElementById('openOverlayBtn');
-    const overlay = document.getElementById('overlay');
-    const closeOverlayBtn = document.getElementById('closeOverlayBtn');
-
-    openOverlayBtn.addEventListener('click', () => {
-        overlay.style.display = 'block';
-    });
-
-    closeOverlayBtn.addEventListener('click', () => {
-        overlay.style.display = 'none';
-    });
-
-    // Close the overlay if the user clicks outside of the overlay content
-    window.addEventListener('click', (event) => {
-        if (event.target == overlay) {
-            overlay.style.display = 'none';
-        }
-    });
-});
-
-
   </script>
 </body>
 
